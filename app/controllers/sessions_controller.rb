@@ -10,6 +10,7 @@ class SessionsController < ApplicationController
       redirect_to @user
     else
       redirect_to root_path
+      flash[:success] = "just a string"
     end
   end
 
