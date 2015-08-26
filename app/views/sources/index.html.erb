@@ -1,0 +1,20 @@
+
+<h1>Sources</h1>
+
+  <tbody>
+    <% @sources.each do |source| %>
+      <ul>
+        <li><%= link_to source.link, source %></li>
+        <li><%= source.description %></li>
+        <li><%= source.category %></li>
+        <li><%= source.tags %></li>
+        <li><%= link_to 'Edit', edit_source_path(source) %> | 
+        <%= link_to 'Destroy', source, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+      </ul>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Source', new_source_path %>

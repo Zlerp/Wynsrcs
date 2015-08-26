@@ -1,0 +1,31 @@
+<%= form_for(@source) do |f| %>
+  <% if @source.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@source.errors.count, "error") %> prohibited this startup from being saved:</h2>
+
+      <ul>
+      <% @source.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+    <%= f.text_field :link, :placeholder => 'Link' %>
+  </div>
+  <div class="field">
+    <%= f.text_field :category, :placeholder => 'Category' %>
+  </div>
+  <div class="field">
+    <%= f.text_area :description, :placeholder => 'Description (optional)' %>
+  </div>
+  <div class="field">
+    <%= f.text_field :tags, :placeholder => 'Tags' %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

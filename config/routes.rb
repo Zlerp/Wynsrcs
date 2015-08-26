@@ -1,8 +1,18 @@
 Rails.application.routes.draw do
 
+  get 'sources/new'
+
+  get 'sources/edit'
+
+  get 'sources/show'
+
+  get 'sources/index'
+
   root to: 'sessions#new'
-  resources :users
+  resources :users 
+  resources :sources
   resource :sessions
+
 
   get 'users/index'
   get 'users/new'
