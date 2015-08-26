@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     if @user
       session[:user_id] = @user.id
       flash[:success] = "just a string"
-      redirect_to sources_path
+      redirect_to @user
     else
       redirect_to root_path
       flash[:success] = "just a string"
@@ -15,7 +15,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+
       session[:user_id] = nil
-      redirect_to '/', flash:{notice:"you have logged out"}
+      redirect_to root_path
   end
 end
