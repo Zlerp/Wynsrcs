@@ -16,7 +16,9 @@
     <%= f.text_field :link, :placeholder => 'Link' %>
   </div>
   <div class="field">
-    <%= f.text_field :category, :placeholder => 'Category' %>
+    <%= f.select :category, options_for_select([["Select One", ""],"Testing","Ruby", "Ruby on Rails",
+        "Javascript", "Jquery", "HTML", "CSS", "Agile", "Lean", "Git", "Command Line", "PHP", "Databases"]),
+        class: "field_box", placeholder: "club selector"%>
   </div>
   <div class="field">
     <%= f.text_area :description, :placeholder => 'Description (optional)' %>

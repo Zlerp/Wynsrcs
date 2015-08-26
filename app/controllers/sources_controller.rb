@@ -48,6 +48,6 @@ class SourcesController < ApplicationController
   end
 
   def source_params
-    params.require(:source).permit(:link, :category, :tags, :user_id)
+    params.require(:source).permit(:link, :category, :tags, :description, :user_id)
   end
 end

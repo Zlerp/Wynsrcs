@@ -5,7 +5,9 @@
     <% @sources.each do |source| %>
       <ul>
         <li><%= link_to source.link, source %></li>
-        <li><%= source.description %></li>
+        <% if source.description %>
+          <li><%= source.description %></li>
+        <% end %>
         <li><%= source.category %></li>
         <li><%= source.tags %></li>
         <li> found by: <%= link_to source.user.username, user_path(source.user) %></li>
