@@ -8,7 +8,7 @@ class SourcesController < ApplicationController
 
   def create
       @source = Source.new(source_params)
-      @source.user_id = current_user
+      @source.user_id = current_user.id
       if @source.save
         redirect_to sources_path
       else
