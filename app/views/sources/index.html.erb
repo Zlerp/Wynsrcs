@@ -8,6 +8,7 @@
         <li><%= source.description %></li>
         <li><%= source.category %></li>
         <li><%= source.tags %></li>
+        <li> found by: <%= link_to source.user.username, user_path(source.user) %></li>
         <% if source.user_id == current_user.id %>
           <li><%= link_to 'Edit', edit_source_path(source) %> |
           <%= link_to 'Destroy', source, method: :delete, data: { confirm: 'Are you sure?' } %></li>
