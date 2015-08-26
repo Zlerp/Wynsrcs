@@ -8,7 +8,7 @@ class SourcesController < ApplicationController
 
   def create
       @source = Source.new(source_params)
-
+      @source.user_id = current_user
       if @source.save
         redirect_to sources_path
       else
@@ -48,6 +48,6 @@ class SourcesController < ApplicationController
   end
 
   def source_params
-    params.require(:source).permit(:link, :category, :tags)
+    params.require(:source).permit(:link, :category, :tags, :user_id)
   end
 end
