@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     if @user
       session[:user_id] = @user.id
       flash[:success] = "just a string"
-      redirect_to @user
+      redirect_to sources_path
     else
       redirect_to root_path
       flash[:success] = "just a string"
