@@ -21,6 +21,7 @@ class SourcesController < ApplicationController
   end
 
   def show
+    @tags=@source.tags.split(', ')
   end
 
   def update
